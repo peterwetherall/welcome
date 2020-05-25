@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: #FEFEFE;
+}
+
+nav {
+	margin: 0 auto;
+	height: 100px;
+	width: 100px;
+	background: #214191;
+	position: relative;
+	top: calc(50% - 50px);
+	transition: height 1s, top 1s, width 1s, transform 2s;
+	z-index: 2;
+}
+
+body:hover nav {
+	height: 300px;
+	width: 300px;
+	top: calc(50% - 150px);
+	transition: height 1s, top 1s, width 1s, transform 2s;
+	transform: rotate(225deg);
+}
+
+nav::before {
+	content: "";
+	height: 26px;
+	width: 0;
+	top: -25px;
+	background: #99CDFF;
+	transition: width 1s;
+	position: absolute;
+	z-index: 2;
+}
+
+body:hover nav::before, body:hover nav::after {
+	width: 325px;
+	transition: width 2s;
+}
+
+nav::after {
+	content: "";
+	height: 26px;
+	width: 0;
+	bottom: -25px;
+	right: 0;
+	background: #99CDFF;
+	transition: width 1s;
+	position: absolute;
+	z-index: 2;
+}
+
+aside {
+	height: 100px;
+	width: 100px;
+	background: #214191;
+	position: absolute;
+	left: calc(50% - 50px);
+	top: calc(50% - 50px);
+	transition: height 1s, top 1s, width 1s, left 1s;
+	z-index: 2;
+}
+
+aside::before {
+	content: "";
+	height: 0;
+	width: 26px;
+	bottom: 0;
+	left: -25px;
+	background: #99CDFF;
+	transition: height 1s;
+	position: absolute;
+	z-index: 2;
+}
+
+body:hover aside {
+	height: 300px;
+	width: 300px;
+	top: calc(50% - 150px);
+	left: calc(50% - 150px);
+	transition: height 1s, top 1s, width 1s, left 1s;
+}
+
+body:hover aside::before, body:hover aside::after {
+	height: 325px;
+	transition: height 2s;
+}
+
+aside::after {
+	content: "";
+	height: 0;
+	width: 26px;
+	top: 0;
+	right: -25px;
+	background: #99CDFF;
+	transition: height 1s;
+	position: absolute;
+	z-index: 2;
+}
+
+article {
+	height: 100px;
+	background: #FFFFFF;
+	border-style: solid;
+	border-width: 25px;
+	border-color: #99CDFF;
+	width: 0;
+	position: absolute;
+	top: calc(50% - 75px);
+	left: 50%;
+	opacity: 0;
+	z-index: 5;
+}
+
+body:hover article {
+	width: 690px;
+	height: calc(100% - 50px);
+	top: 0;
+	left: calc(50% - 370px);
+	transition: width 2s ease 1.8s, left 2s ease 1.8s, opacity 0s ease 1.8s, height 3s ease 6.5s, top 3s ease 6.5s;
+	opacity: 1;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Roboto Slab';
+	font-size: 48px;
+	line-height: 50px;
+	cursor: default;
+	opacity: 0;
+	padding-top: 25px;
+	margin-top: 0;
+}
+
+body:hover h1 {
+	opacity: 1;
+	padding-top: calc(50% + 13px);
+	transition: opacity 0.5s ease 3.8s, padding-top 3s ease 6.5s;
+}
+
+h3 {
+	text-align: center;
+	font-family: 'Roboto Slab';
+	font-size: 38px;
+	cursor: default;
+	opacity: 0;
+	font-style: italic;
+}
+
+body:hover h3 {
+	opacity: 1;
+	transition: opacity 2s ease 10.5s;
+	cursor: pointer;
+}
+
+a, a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+
+header {
+	width: 0;
+	height: calc((100% - 515px) / 6);
+	background: #214191;
+	position: fixed;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	z-index: 10;
+}
+
+body:hover header, body:hover footer {
+	width: 100%;
+	transition: width 2s, opacity 0s;
+	transition-delay: 4.5s;
+	opacity: 1;
+}
+
+footer {
+	width: 0;
+	height: calc((100% - 515px) / 6);
+	background: #214191;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+	z-index: 10;
+}
+
+body:hover {
+	background: #99CDFF;
+	transition: background 1s ease 9.5s;
+}
